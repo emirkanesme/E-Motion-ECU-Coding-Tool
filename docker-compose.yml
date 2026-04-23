@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  ecu_pinn_trainer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ecu_ai_model
+    shm_size: "16g"
+    network_mode: host
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+    volumes:
+      - ./data:/workspace/ecu_tuning/data
+      - ./models:/workspace/ecu_tuning/models
+      - ./src:/workspace/ecu_tuning/src
+      - ./tests:/workspace/ecu_tuning/tests
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
