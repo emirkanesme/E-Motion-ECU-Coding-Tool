@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Motion</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="hero">
+        <h1>E-Motion</h1>
+        <p>Upload a TRC file, toggle options, and export your updated file.</p>
+      </header>
+
+      <section class="controls">
+        <label class="upload" for="fileInput">
+          <span>Upload .TRC File</span>
+          <input id="fileInput" type="file" accept=".trc,.TRC,.txt" />
+        </label>
+        <input id="searchInput" type="text" placeholder="Search options..." />
+        <button id="downloadBtn" disabled>Download Updated TRC</button>
+      </section>
+
+      <section class="meta">
+        <p id="fileName">No file uploaded.</p>
+        <p id="stats"></p>
+      </section>
+
+      <main id="optionsContainer" class="options-list"></main>
+    </div>
+
+    <template id="optionRowTemplate">
+      <article class="option-row">
+        <button class="option-head" type="button">
+          <span class="option-name"></span>
+          <span class="option-current"></span>
+        </button>
+        <div class="option-dropdown">
+          <select class="option-select"></select>
+        </div>
+      </article>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
