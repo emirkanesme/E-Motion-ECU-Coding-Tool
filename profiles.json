@@ -1,0 +1,26 @@
+{
+  "BMW Default": {
+    "com_port": "COM3",
+    "bustype": "slcan",
+    "bitrate": 500000,
+    "request_id": 2015,
+    "response_min": 2024,
+    "response_max": 2031,
+    "timeout_sec": 1.0,
+    "poll_interval_sec": 0.2,
+    "mode": 1,
+    "pids": [
+      12,
+      13,
+      5,
+      17,
+      47
+    ],
+    "auto_reconnect": true,
+    "reconnect_delay_sec": 1.5,
+    "simulate_mode": false,
+    "alarm_enabled": false,
+    "alarm_rpm": 3500,
+    "alarm_temp": 105
+  }
+}
