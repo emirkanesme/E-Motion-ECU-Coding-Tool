@@ -191,13 +191,13 @@ class PollWorker(QObject):
                 continue
             now = time.time()
             if pid == 0x0C:
-                value = f"{self._rng.randint(700, 4500)} rpm"
+                value = f"{self._rng.randint(700, 8500)} rpm"
                 label = "Engine RPM"
             elif pid == 0x0D:
-                value = f"{self._rng.randint(0, 130)} km/h"
+                value = f"{self._rng.randint(0, 399)} km/h"
                 label = "Vehicle Speed"
             elif pid == 0x05:
-                value = f"{self._rng.randint(70, 108)} C"
+                value = f"{self._rng.randint(70, 130)} C"
                 label = "Coolant Temp"
             elif pid == 0x11:
                 value = f"{self._rng.randint(0, 100)}.0 %"
